@@ -83,4 +83,9 @@ public class BeerServiceImpl implements BeerService {
         existing.setUpc(beer.getUpc());
         beerMap.put(existing.getId(), existing);
     }
+
+    @Override
+    public void deleteById(UUID beerId) {
+        beerMap.remove(beerId);
+    }
 }

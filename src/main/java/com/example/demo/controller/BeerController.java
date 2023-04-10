@@ -29,7 +29,7 @@ public class BeerController {
     public List<Beer> listBeers(){
         return beerService.listBeers();
     }
-    @GetMapping(value = "/{beerId}")
+    @GetMapping(value = "{beerId}")
     public Beer getBeerById(@PathVariable("beerId") UUID beerId){
         log.debug("Get Beer By Id - Controller");
         return beerService.getBerById(beerId);
@@ -37,6 +37,11 @@ public class BeerController {
     @PutMapping("{beerId}")
     public ResponseEntity updateById(@RequestBody Beer beer, @PathVariable("beerId") UUID beerId){
         beerService.updateById(beerId, beer);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+    @DeleteMapping("{beerId}")
+    public ResponseEntity deleteById(@PathVariable("beerId") UUID beerId){
+        beerService.deleteById(beerId);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }
