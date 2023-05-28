@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.BeerDTO;
-import com.example.demo.service.BeerService;
+import com.example.demo.services.BeerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;

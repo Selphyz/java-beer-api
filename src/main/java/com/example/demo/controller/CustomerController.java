@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.CustomerDTO;
-import com.example.demo.service.CustomerService;
+import com.example.demo.services.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

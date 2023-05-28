@@ -2,9 +2,11 @@ package com.example.demo.model.entities;
 
 import com.example.demo.model.BeerStyle;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Version;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -18,6 +20,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Beer {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
     @Version
     private Integer version;
