@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.model.CustomerDTO;
+import com.example.demo.model.repositories.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Primary
 @RequiredArgsConstructor
 public class CustomerServiceJPA implements CustomerService {
+    private final CustomerRepository customerRepository;
     @Override
     public CustomerDTO getCustomerById(UUID uuid) {
         return null;

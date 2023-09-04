@@ -18,7 +18,7 @@ class BeerRepositoryTest {
     BeerRepository beerRepository;
 
     @Test
-    void testSaveBeer() {
+    void testBerNameTooLong() {
         assertThrows(ConstraintViolationException.class, () -> {
             Beer savedBeer = beerRepository.save(Beer.builder()
                     .beerName("Test ajksdhkajshdqowiduqwoilkjsdklfjsdfiuoqwiueqwlkj8798ew7fsdhfsdoifyaqsa9087efwkjehflkwjeyhfw0e6")
@@ -31,7 +31,7 @@ class BeerRepositoryTest {
     }
 
     @Test
-    void testNameTooLong() {
+    void testSaveBeer() {
         Beer savedBeer = beerRepository.save(Beer.builder()
                 .beerName("Test")
                 .beerStyle(BeerStyle.PALE_ALE)
